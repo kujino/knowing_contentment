@@ -52,3 +52,4 @@
 - PostgreSQL
 - Render
 - gem(Devise / ActiveStorage / tailwindcss-rails / ransack / kaminari)
+- Cloudinary(画像投稿機能用)
