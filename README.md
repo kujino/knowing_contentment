@@ -58,3 +58,6 @@
 - Render
 - gem(Devise / ActiveStorage / tailwindcss-rails / ransack / kaminari)
 - Cloudinary(画像投稿機能用)
+
+## 画面遷移図
+Figma：https://www.figma.com/design/5noPIl1WBAWampncQZVcXb/%E4%BB%8F%E6%95%99%E3%81%BF%E3%81%A4%E3%81%91?node-id=0-1&t=Wil6xEkcSsOGmatN-1
