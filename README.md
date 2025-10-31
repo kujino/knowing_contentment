@@ -60,17 +60,4 @@
 - Cloudinary(画像投稿機能用)
 
 ## 画面遷移図
-[画面遷移図](https://www.figma.com/design/5noPIl1WBAWampncQZVcXb/%E4%BB%8F%E6%95%99%E3%81%BF%E3%81%A4%E3%81%91?node-id=0-1&t=Wil6xEkcSsOGmatN-1)
-
-### READMEに記載した機能
-- [x] ユーザー登録機能
-- [x] ログイン機能
-- [x] お題表示機能
-- [x] 投稿機能 （画像投稿含む、ログインユーザーのみ）
-- [x] 投稿削除機能
-- [x] タイムライン閲覧機能（未ログインでも閲覧可能）
-- [x] 投稿リスト閲覧機能 (ログインユーザーのみ)
-
-### 未ログインでも閲覧または利用できるページ
-以下の項目は適切に未ログインでも閲覧または利用できる画面遷移になっているか？
-- [x] 投稿タイムライン閲覧機能
+Figma：https://www.figma.com/design/5noPIl1WBAWampncQZVcXb/%E4%BB%8F%E6%95%99%E3%81%BF%E3%81%A4%E3%81%91?node-id=0-1&t=Wil6xEkcSsOGmatN-1
