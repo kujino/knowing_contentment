@@ -1,0 +1,26 @@
+ja:
+  devise:
+    confirmations:
+      confirmed: "アカウントを登録しました。"
+      send_instructions: "数分以内に確認メールが届きます。"
+      send_paranoid_instructions: "数分以内に確認メールが届きます。"
+    failure:
+      already_authenticated: "すでにログインしています。"
+      inactive: "アカウントがまだ有効化されていません。"
+      invalid: "メールアドレスまたはパスワードが違います。"
+      locked: "アカウントがロックされています。"
+      last_attempt: "あと一回誤るとアカウントがロックされます。"
+      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+      timeout: "セッションがタイムアウトしました。もう一度ログインしてください。"
+      unauthenticated: "ログインしてください。"
+      unconfirmed: "アカウントを有効化してください。"
+    registrations:
+      signed_up: "アカウント登録が完了しました。"
+      updated: "アカウント情報を更新しました。"
+      destroyed: "アカウントを削除しました。さようなら！"
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+    passwords:
+      send_instructions: "パスワードの再設定メールを送信しました。"
+      updated: "パスワードを変更しました。"
