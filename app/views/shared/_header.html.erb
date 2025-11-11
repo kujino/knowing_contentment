@@ -2,14 +2,53 @@
   <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
     <!-- 左側: ロゴ -->
     <div>
-      <%= link_to "BuddhaLog", root_path, class: "text-2xl font-bold text-[#2F3A4A]" %>
+      <%= link_to "BuddhaLog", root_path, class: "text-2xl font-bold text-[#2F3A4A] " %>
     </div>
 
     <!-- 右側: ナビゲーション -->
     <nav class="flex space-x-4">
-      <%= link_to "みんなの投稿", "#", class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition" %>
-      <%= link_to "新規登録", new_user_registration_path, class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition" %>
-      <%= link_to "ログイン", new_user_session_path, class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition" %>
+      <%= link_to "みんなの投稿", "#", class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition py-1.5" %>
+
+      <% if user_signed_in? %>
+
+        <div data-controller="ui--dropdown" class="relative" >
+          <button
+            type="button"
+            data-action="click->ui--dropdown#toggle click->ui--dropdown#hide"
+            class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-mediuim text-[#2F3A4A] shadow-xs ring-1 ring-gray-300 hover:bg-gray-50"
+          >
+            MENU
+          </button>
+
+          <div
+            data-ui--dropdown-target="menu"
+            class="hidden absolute right-0 mt-2 w-30 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition transform"
+            data-transition-enter-from="opacity-0 scale-95"
+            data-transition-enter-to="opacity-100 scale-100"
+            data-transition-leave-from="opacity-100 scale-100"
+            data-transition-leave-to="opacity-0 scale-95"
+          >
+            <div class="py-1">
+
+              <%= link_to "マイページ",
+                "#",
+                class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              %>
+
+              <%= link_to "ログアウト",
+                destroy_user_session_path,
+                data: { turbo_method: "delete" },
+                class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              %> 
+            </div>
+          </div>
+        </div>
+
+      <% else %>
+
+        <%= link_to "新規登録", new_user_registration_path, class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition py-1.5" %>
+        <%= link_to "ログイン", new_user_session_path, class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition py-1.5" %>
+      <% end %>
     </nav>
   </div>
 </header>
