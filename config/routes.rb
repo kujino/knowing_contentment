@@ -3,8 +3,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     sessions: "users/sessions"
   }
+
   get "mypage" => "mypages#show"
-  get "new_post" => "posts#new"
+  
+  resources :posts, only: [:new, :create]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

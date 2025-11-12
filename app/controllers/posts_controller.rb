@@ -5,14 +5,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post =Post.new(post_params)
-    @post.save
-    redirect_to mypage_path
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      redirect_to mypage_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:user_id, :content, :is_anonymous)
+    params.require(:post).permit(:content, :is_anonymous)
   end
 end
