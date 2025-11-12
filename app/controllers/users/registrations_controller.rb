@@ -1,4 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  
   protected
 
   # サインアップ後のリダイレクト先
