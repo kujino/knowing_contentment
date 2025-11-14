@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
     @today_theme = Theme.first
@@ -6,6 +7,8 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @today_theme = Theme.first
+    @post.theme = @today_theme
     if @post.save
       redirect_to mypage_path
     else
