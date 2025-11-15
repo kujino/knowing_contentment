@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
-  
+
   def new
     @post = Post.new
+    @today_theme = Theme.order("RANDOM()").first
   end
 
   def create
@@ -16,6 +17,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :is_anonymous)
+    params.require(:post).permit(:content, :is_anonymous, :theme_id)
   end
 end
