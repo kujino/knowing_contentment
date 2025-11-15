@@ -25,6 +25,7 @@
           <%= f.label :is_anonymous, "チェックでタイムラインにユーザー名を表示（デフォルトは匿名）", class: "text-gray-800 cursor-pointer select-none" %>
         </div>
 
+        <%= f.hidden_field :theme_id, value: @today_theme.id %>
       
         <div class="flex justify-center py-10">
           <%= f.submit "送信",
