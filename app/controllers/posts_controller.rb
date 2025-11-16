@@ -21,6 +21,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :is_anonymous, :theme_id)
+    params.require(:post).permit(:content, :is_anonymous, :theme_id, :image)
   end
 end
