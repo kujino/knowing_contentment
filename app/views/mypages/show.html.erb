@@ -12,27 +12,29 @@
     <div class="font-semibold text-xl text-left text-[#2F3A4A] pt-20">
       みつけた仏教一覧 
     </div>
-    <div class="space-y-4 pt-5">
-  <% @posts.each do |post| %>
-    <div class="bg-white shadow-md rounded-xl p-5 border border-gray-100">
-      
-      <!-- テーマ（今日のお題） -->
-      <div class="text-sl font-semibold text-[#2F3A4A] tracking-wide">
-        <%= post.theme.title %>
-      </div>
+    <div class="space-y-3 pt-4">
+      <% @posts.each do |post| %>
+        <%= link_to post_path(post), class: "block" do %>
+          <div class="bg-white shadow-sm rounded-lg p-3 border border-gray-100">
 
-      <!-- 内容 -->
-      <div class="mt-3 text-[#1C1C1C] leading-relaxed whitespace-pre-line">
-        <%= post.content %>
-      </div>
+            <div class="flex items-center gap-2 text-sm font-semibold text-[#2F3A4A]">
+              <span><%= post.theme.title %></span>
+              <% if post.image.attached? %>
+                <%= image_tag "camera_icon.svg", class: "w-4 h-4 inline-block " %>
+              <% end %>
+            </div>
 
-      <!-- 日付 -->
-      <div class="mt-4 text-xs text-gray-500 text-right">
-        <%= l(post.created_at, format: :long) %>
-      </div>
-      
+            <div class="mt-2 text-sm text-[#1C1C1C] leading-snug line-clamp-2">
+              <%= post.content.truncate(40) %>
+            </div>
+
+            <div class="mt-2 text-[10px] text-gray-500 text-right">
+              <%= l(post.created_at, format: :long) %>
+            </div>
+
+          </div>
+        <% end %>
+      <% end %>
     </div>
-  <% end %>
-</div>
   </div>
 </div>
