@@ -14,9 +14,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end 
+
   private
 
   def post_params
-    params.require(:post).permit(:content, :is_anonymous, :theme_id)
+    params.require(:post).permit(:content, :is_anonymous, :theme_id, :image)
   end
 end
