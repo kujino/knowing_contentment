@@ -1,8 +1,23 @@
 <div class="bg-[#F4F4F4] min-h-screen">
-  <div class="max-w-xl mx-auto pt-25">
-    <div class="my-8 p-7 bg-gradient-to-b from-[#FFF9EC] to-white border border-[#F6E2B3] rounded-2xl shadow-md">
+  <div class="max-w-xl mx-auto pt-10">
+
+    <div class="relative p-7 bg-gradient-to-b from-[#FFF9EC] to-white border border-[#F6E2B3] rounded-2xl shadow-md">
+
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <%= link_to edit_post_path(@post), class: "opacity-40 hover:opacity-100 transition" do %>
+          <%= image_tag "pencil_icon.svg", class: "w-5 h-6" %>
+        <% end %>
+
+        <%= link_to post_path(@post),
+          data: { turbo_method: :delete, turbo_confirm: "削除しますか？" },
+          class: "opacity-40 hover:opacity-100 transition" do %>
+          <%= image_tag "trash_icon.svg", class: "w-5 h-6" %>
+        <% end %>
+      </div>
+
+      <!-- 本文 -->
       <div class="text-center mb-6">
-        
+
         <h2 class="mt-3 text-3xl font-semibold text-[#E3A83A] tracking-wide">
           <%= @post.theme.title %>
         </h2>
@@ -15,8 +30,7 @@
           </div>
         <% end %>
 
-        <!-- 画像がある時は mt-10、ない時は mt-6 で調整 -->
-        <div class="<%= @post.image.attached? ? 'mt-10' : 'mt-6' %> text-left">
+        <div class="<%= @post.image.attached? ? 'mt-10' : 'mt-6' %> text-left whitespace-pre-line">
           <%= @post.content %>
         </div>
 
@@ -26,9 +40,8 @@
 
       </div>
     </div>
-    <div class="mt-2 bg-white p-6 rounded-md shadow mt-10">
-      <p class="font-medium">投稿したお題</p>
-      <p class="mt-5 whitespace-pre-line"><%= @post.theme.description %></p>
+    <div class="pt-10">
+      <%= render 'theme', post: @post %>
     </div>
   </div>
 </div>

@@ -5,6 +5,8 @@ ja:
         name: "ユーザー名"
         email: "メールアドレス"
         password: "パスワード"
+      post:
+        content: "内容"
 
   activemodel:
     attributes:
