@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
-  before_action :post_show_authorize, only: [ :show ]
+  skip_before_action :authenticate_user!, only: [:index]
+  before_action :post_show_authorize, only: [:show]
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.includes(:user, :theme, image_attachment: :blob).order(created_at: :desc)
   end
 
   def new

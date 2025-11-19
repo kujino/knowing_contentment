@@ -1,17 +1,25 @@
-<div class="bg-[#F4F4F4] py-40">
-  <div class="text-center">
-    <h1 class="font-serif text-5xl font-bold text-[#2F3A4A] mx-auto w-fit">
+<div class="bg-[#F4F4F4] min-h-screen">
+  <div class="bg-white pt-10 pb-15 text-center">
+    <%= image_tag "buddhalog_top_image.png", class: "mx-auto w-60 opacity-70" %>
+
+    <h1 class="font-serif text-5xl font-bold text-[#2F3A4A] mt-4">
       仏教みつけ
     </h1>
-  </div>
 
-  <div class="flex justify-center mt-10 space-x-4">
-    <%= link_to posts_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" do %>
-      みんなの仏教
-    <% end %>
+    <p class="text-gray-600 mt-2 font-light tracking-wide pt-5">
+      日常の中に、ひとつの気づきを。
+    </p>
 
-    <%= link_to new_user_registration_path, class: "bg-white border border-[#E3A83A] text-[#E3A83A] font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#fff6e0] transition" do %>
-      ユーザー登録
-    <% end %>
+    <div class="flex justify-center mt-10 space-x-4">
+      <%= link_to posts_path,
+        class: "bg-[#E3A83A] text-white font-medium py-2 px-6 shadow-sm hover:bg-[#cc972f] transition" do %>
+        みんなの仏教
+      <% end %>
+
+      <%= link_to new_user_registration_path,
+        class: "bg-white border border-[#E3A83A] text-[#E3A83A] font-medium py-2 px-6 shadow-sm hover:bg-[#fff6e0] transition" do %>
+        ユーザー登録
+      <% end %>
+    </div>
   </div>
 </div>
