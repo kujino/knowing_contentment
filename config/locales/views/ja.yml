@@ -1,0 +1,17 @@
+ja:
+  devise:
+    registrations:
+      edit:
+        title: "ユーザー編集"
+        name: "ユーザー名" 
+        email: "メールアドレス"
+        submit: "更新"
+      new:
+        title: "ユーザー登録"
+        name: "ユーザー名"
+        email: "メールアドレス"
+        password: "パスワード（6文字以上）"
+        password_confirmation: "パスワード（確認用）"
+        submit: "登録する"
+        to_login_page: "アカウントをお持ちの方はこちら"
+
