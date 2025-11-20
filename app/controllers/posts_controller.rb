@@ -7,8 +7,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
-    @today_theme = Theme.order("RANDOM()").first
+    if current_user.posts.where(created_at: Time.current.all_day).exists?
+      redirect_to request.referrer || root_path, notice: "今日は投稿済みです、また明日みつけてね"
+    else
+      @post = Post.new
+      @today_theme = Theme.order("RANDOM()").first
+    end
   end
 
   def create
