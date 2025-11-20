@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @today_theme = Theme.find(params[:post][:theme_id])
     if @post.save
       redirect_to post_path(@post), notice: "投稿しました"
     else
