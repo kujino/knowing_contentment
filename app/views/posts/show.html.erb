@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <div class="bg-[#F4F4F4] min-h-screen">
   <div class="max-w-xl mx-auto pt-10">
 
@@ -9,7 +10,7 @@
         <% end %>
 
         <%= link_to post_path(@post),
-          data: { turbo_method: :delete, turbo_confirm: "削除しますか？" },
+          data: { turbo_method: :delete, turbo_confirm: t('.delete_it?') },
           class: "opacity-40 hover:opacity-100 transition" do %>
           <%= image_tag "trash_icon.svg", class: "w-5 h-6" %>
         <% end %>
@@ -41,7 +42,7 @@
       </div>
     </div>
     <div class="pt-10">
-      <%= render 'theme', post: @post %>
+      <%= render 'shared/theme', post: @post %>
     </div>
   </div>
 </div>

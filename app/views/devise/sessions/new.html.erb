@@ -1,23 +1,24 @@
+<% content_for(:title, t('.title')) %>
 <div class="bg-[#F4F4F4] min-h-screen">
   <div class="font-semibold text-xl text-center text-[#2F3A4A] pt-30">
-    ログイン
+    <%= t('.title') %>
   </div>
 
   <div class="max-w-lg mx-auto mt-5 bg-white p-6 rounded-md shadow">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="space-y-4">
         <div>
-          <%= f.label :email, "メールアドレス", class: "text-[#2F3A4A] font-medium" %>
+          <%= f.label :email, t('.email'), class: "text-[#2F3A4A] font-medium" %>
           <%= f.email_field :email, class: "w-full mt-1 px-3 py-1 border border-gray-300 rounded-md", autocomplete: "email", placeholder: "example@email.com" %>
         </div>
 
         <div>
-          <%= f.label :password, "パスワード", class: "text-[#2F3A4A] font-medium" %>
+          <%= f.label :password, t('.password'), class: "text-[#2F3A4A] font-medium" %>
           <%= f.password_field :password, class: "w-full mt-1 px-3 py-1 border border-gray-300 rounded-md", autocomplete: "new-password",  placeholder: "password" %>
         </div>
 
         <div class="flex justify-center mt-10 space-x-4">
-          <%= f.submit "ログイン", class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f]" %>
+          <%= f.submit t('.submit'), class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f]" %>
         </div>   
     <% end %>
   </div>

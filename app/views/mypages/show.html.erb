@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <div class="bg-[#F4F4F4] min-h-screen">
   <div class="max-w-xl mx-auto pt-10">
     <div class="mt-2 bg-white p-6 rounded-md shadow">
@@ -11,12 +12,12 @@
       </div>
 
       <div class="flex justify-center mt-10 space-x-4">
-        <%= link_to "仏教をみつける", new_post_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
+        <%= link_to t('.discover_buddhism'), new_post_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
       </div>
     </div>
 
     <div class="font-semibold text-xl text-left text-[#2F3A4A] pt-20">
-      みつけた仏教一覧 
+      <%= t('.post_list') %>
     </div>
     <div class="space-y-3 pt-4">
       <% @posts.each do |post| %>

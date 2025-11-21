@@ -1,6 +1,7 @@
+<% content_for(:title, t('.title')) %>
 <div class="bg-[#F4F4F4] min-h-screen">
   <div class="max-w-xl mx-auto pt-10">
-    <%= render 'theme', post: @post %>
+    <%= render 'shared/theme', post: @post %>
 
     <div class="mt-10">
       <%= render "shared/error_messages", object: @post %>
@@ -15,7 +16,7 @@
           <div class="flex items-center border border-gray-300 rounded-md overflow-hidden">
 
             <label class="bg-white px-4 py-2 text-sm text-gray-700 border-r border-gray-300 cursor-pointer hover:bg-gray-200">
-            ファイルを選択
+            <%= t('.select_file') %>
               <%= f.file_field :image,
               accept: Post::ACCEPTED_CONTENT_TYPES.join(","),
               class: "hidden",
@@ -24,7 +25,7 @@
 
             <!-- ファイル名表示部分 -->
               <span id="file-name" class="flex-1 px-3 py-2 text-gray-600 text-sm">
-                選択されていません
+                <%= t('.not_selected') %>
               </span>
            </div>
           </div>
@@ -38,7 +39,7 @@
 
         <div class="flex items-center space-x-2 pt-10">
           <%= f.check_box :is_anonymous, { class: "scale-140 translate-y-[1.5px] cursor-pointer" }, false, true %>
-          <%= f.label :is_anonymous, "チェックでタイムラインにユーザー名を表示（デフォルトは匿名）", class: "text-gray-800 cursor-pointer select-none" %>
+          <%= f.label :is_anonymous, t('.checking_this_will_display_the_username_on_the_timeline'), class: "text-gray-800 cursor-pointer select-none" %>
         </div>
       
         <div class="flex justify-center pt-15">

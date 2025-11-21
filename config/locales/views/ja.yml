@@ -1,4 +1,49 @@
 ja:
+  site:
+    title: "BuddhaLog"
+  mypages:
+      show:
+        title: "マイページ"
+        discover_buddhism: "仏教を見つける"
+        post_list: "見つけた仏教"
+  posts:
+    edit:
+      title: "投稿編集"
+      select_file: "ファイルを選択"
+      not_selected: "選択されていません"
+      checking_this_will_display_the_username_on_the_timeline: "チェックでタイムラインにユーザー名を表示（デフォルトは匿名）"
+      submit: "送信" 
+    index:
+      title: "タイムライン"
+    new:
+      title: "新規投稿"
+      today_theme: "今日の教え"
+      image: "画像"
+      select_file: "ファイルを選択"
+      not_selected: "選択されていません"
+      checking_this_will_display_the_username_on_the_timeline: "チェックでタイムラインにユーザー名を表示（デフォルトは匿名）"
+      submit: "送信"
+    show:
+      title: "投稿詳細"
+      delete_it?: "削除しますか？"
+  shared:
+    header:
+      buddhalog: "BuddhaLog"
+      timeline: "みんなの仏教"
+      my_page: "マイページ"
+      logout: "ログアウト"
+      sign_up: "新規登録"
+      login: "ログイン"
+    theme:
+      post_theme: "投稿したお題"
+  static_pages:
+    top:
+      title: "トップページ"
+      discover_buddhism: "仏教みつけ"
+      timeline: "みんなの仏教"
+      simple_daily_buddhist_practice: "毎日にひとつ、仏教の気づきを"
+      sign_up: "ユーザー登録"
+
   devise:
     registrations:
       edit:
@@ -14,4 +59,12 @@ ja:
         password_confirmation: "パスワード（確認用）"
         submit: "登録する"
         to_login_page: "アカウントをお持ちの方はこちら"
+    sessions:
+      new:
+        title: "ログイン"
+        email: "メールアドレス"
+        password: "パスワード"
+        submit: "ログイン"
+
+        
 

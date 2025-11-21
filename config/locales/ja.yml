@@ -1,6 +1,4 @@
 ja:
-  site:
-    title: "BuddhaLog"
   activerecord:
     attributes:
       user:
