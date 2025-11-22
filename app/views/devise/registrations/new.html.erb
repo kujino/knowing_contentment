@@ -1,6 +1,7 @@
+<% content_for(:title, t('.title')) %>
 <div class="bg-[#F4F4F4] min-h-screen">
   <div class="font-semibold text-xl text-center text-[#2F3A4A] pt-30">
-    ユーザー登録
+    <%= t('.title') %>
   </div>
 
   <div class="max-w-lg mx-auto mt-5 bg-white p-6 rounded-md shadow">
@@ -8,30 +9,30 @@
       <%= render "shared/error_messages", object: resource %>
       <div class="space-y-4">
         <div>
-          <%= f.label :name, "ユーザー名", class: "text-[#2F3A4A] font-medium" %>
+          <%= f.label :name, t('.name'), class: "text-[#2F3A4A] font-medium" %>
           <%= f.text_field :name, class: "w-full mt-1 px-3 py-1 border border-gray-300 rounded-md", autofocus: true, placeholder: "釈迦 太郎" %>
         </div>
 
         <div>
-          <%= f.label :email, "メールアドレス", class: "text-[#2F3A4A] font-medium" %>
+          <%= f.label :email, t('.email'), class: "text-[#2F3A4A] font-medium" %>
           <%= f.email_field :email, class: "w-full mt-1 px-3 py-1 border border-gray-300 rounded-md", autocomplete: "email", placeholder: "example@email.com" %>
         </div>
 
         <div>
-          <%= f.label :password, "パスワード(6文字以上)", class: "text-[#2F3A4A] font-medium" %>
+          <%= f.label :password, t('.password'), class: "text-[#2F3A4A] font-medium" %>
           <%= f.password_field :password, class: "w-full mt-1 px-3 py-1 border border-gray-300 rounded-md", autocomplete: "new-password",  placeholder: "password" %>
         </div>
 
         <div>
-          <%= f.label :password_confirmation, "パスワード(確認用)", class: "text-[#2F3A4A] font-medium" %>
+          <%= f.label :password_confirmation, t('.password_confirmation'), class: "text-[#2F3A4A] font-medium" %>
           <%= f.password_field :password_confirmation, class: "w-full mt-1 px-3 py-1 border border-gray-300 rounded-md", autocomplete: "new-password",  placeholder: "もう一度入力してください" %>
         </div>
 
         <div class="flex justify-center mt-10 space-x-4">
-          <%= f.submit "登録する", class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f]" %>
+          <%= f.submit t('.submit'), class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f]" %>
         </div>
 
-        <%= link_to "アカウントをお持ちの方はこちら", new_user_session_path, class:"text-xs font-normal block text-center text-gray-400 mt-5 hover:text-gray-600 transition-colors duration-200" %>
+        <%= link_to t('.to_login_page'), new_user_session_path, class:"text-xs font-normal block text-center text-gray-400 mt-5 hover:text-gray-600 transition-colors duration-200" %>
         
     <% end %>
   </div>
