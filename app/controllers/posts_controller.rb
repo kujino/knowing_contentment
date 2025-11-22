@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def new
     if current_user.posts.where(created_at: Time.current.all_day).exists?
-      redirect_to request.referrer || root_path, notice: "今日は投稿済みです、また明日みつけてね"
+      redirect_to request.referrer || root_path, notice: t('flash_messages.notice.posts_are_made_once_a_day')
     else
       @post = Post.new
       @today_theme = Theme.order("RANDOM()").first
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     @today_theme = Theme.find(params[:post][:theme_id])
     if @post.save
-      redirect_to post_path(@post), notice: "投稿しました"
+      redirect_to post_path(@post), notice: t('flash_messages.notice.create')
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   def update
     @post
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: "更新しました"
+      redirect_to post_path(@post), notice: t('flash_messages.notice.edit')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,10 +45,8 @@ class PostsController < ApplicationController
   def destroy
     @post
     @post.destroy!
-    redirect_to mypage_path, notice: "削除しました"
+    redirect_to mypage_path, notice: t('flash_messages.notice.delete')
   end
-
-
 
   private
 
@@ -56,11 +54,11 @@ class PostsController < ApplicationController
     params.require(:post).permit(:content, :is_anonymous, :theme_id, :image)
   end
 
-  # 投稿ポストユーザー以外アクセス不可
+  # 投稿ユーザー以外アクセス不可
   def post_authorize
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
     if @post.user != current_user
-      redirect_to root_path, alert: "アクセス権がありません"
+      redirect_to root_path, alert: t('flash_messages.notice.access_denied')
     end
   end
 end

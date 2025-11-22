@@ -1,6 +1,13 @@
 ja:
   site:
     title: "BuddhaLog"
+  flash_messages:
+    notice:
+      posts_are_made_once_a_day: "今日は投稿済みです、また明日みつけてね"
+      create: "投稿しました"
+      edit: "更新しました"
+      delete: "削除しました"
+      access_denied: "アクセス権限がありません"
   mypages:
       show:
         title: "マイページ"
