@@ -9,5 +9,5 @@ class Post < ApplicationRecord
   validates :image, content_type: ACCEPTED_CONTENT_TYPES,
                     size: { less_than_or_equal_to: 5.megabytes }
 
-  validates :content, presence: true
+  validates :content, presence: true, length: { maximum: 300 }
 end
