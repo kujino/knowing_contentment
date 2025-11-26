@@ -18,7 +18,9 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path 'buddhalog_apple_icon.png' %>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<%= asset_path 'buddhalog_and_192_icon.png' %>">
+    <link rel="icon" type="image/png" sizes="512x512" href="<%= asset_path 'buddhalog_and_512_icon.png' %>">
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
