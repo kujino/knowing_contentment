@@ -4,17 +4,19 @@
 
     <div class="relative p-7 bg-gradient-to-b from-[#FFF9EC] to-white border border-[#F6E2B3] rounded-2xl shadow-md">
 
-      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        <%= link_to edit_post_path(@post), class: "opacity-40 hover:opacity-100 transition" do %>
-          <%= image_tag "pencil_icon.svg", class: "w-5 h-6" %>
-        <% end %>
+      <% if  @post.user == current_user %>
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <%= link_to edit_post_path(@post), class: "opacity-40 hover:opacity-100 transition" do %>
+            <%= image_tag "pencil_icon.svg", class: "w-5 h-6" %>
+          <% end %>
 
-        <%= link_to post_path(@post),
-          data: { turbo_method: :delete, turbo_confirm: t('.delete_it?') },
-          class: "opacity-40 hover:opacity-100 transition" do %>
-          <%= image_tag "trash_icon.svg", class: "w-5 h-6" %>
-        <% end %>
-      </div>
+          <%= link_to post_path(@post),
+            data: { turbo_method: :delete, turbo_confirm: t('.delete_it?') },
+            class: "opacity-40 hover:opacity-100 transition" do %>
+            <%= image_tag "trash_icon.svg", class: "w-5 h-6" %>
+          <% end %>
+        </div>
+      <% end %> 
 
       <!-- 本文 -->
       <div class="text-center mb-6">
@@ -46,7 +48,7 @@
     </div>
 
     <div class="flex justify-center mt-10 space-x-4">
-      <%= link_to t('.to_mypage'), mypage_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
+      <%= link_to t('.to_back'), request.referer || posts_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
     </div>
   </div>
 </div>
