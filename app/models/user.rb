@@ -9,4 +9,16 @@ class User < ApplicationRecord
 
          validates :name, presence: true, uniqueness: true, length: { maximum: 50 }
          validates :password, presence: true, on: :create
+
+         def reaction(post)
+          reaction_posts << post
+         end
+
+         def unreaction(post)
+          reaction_posts.destroy(post)
+         end
+
+         def reaction?(post)
+          reaction_posts.include?(post)
+         end
 end

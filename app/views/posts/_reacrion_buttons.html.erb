@@ -1,0 +1,5 @@
+<% if current_user.reaction?(post) %>
+    <%= render 'unreaction', { post: post } %>
+<% else %>
+ <%= render 'reaction', { post: post } %>
+<% end %>
