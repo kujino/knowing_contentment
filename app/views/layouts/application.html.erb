@@ -13,6 +13,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
     <%= yield :head %>
 
     <link rel="manifest" href="/manifest.json">
@@ -28,7 +33,7 @@
     <%= favicon_link_tag('buddhalog_favicon.ico') %>
   </head>
 
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen bg-white">
     <%= render 'shared/header' %>
 
     <% if flash[:alert] %>

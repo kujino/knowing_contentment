@@ -1,47 +1,49 @@
 <% content_for(:title, t('.title')) %>
-<div class="bg-[#F4F4F4] min-h-screen px-5 md:px-0 max-w-[480px] md:max-w-7xl">
-  <div class="max-w-xl mx-auto pt-10">
-    <div class="mt-2 bg-white p-6 rounded-md shadow">
-      <div class="space-y-1 text-center font-medium">
-        <div class="flex justify-center items-center space-x-2">
-          <p><%= @user.name %> さん</p>
-          <%= link_to edit_user_registration_path do %>
-            <%= image_tag "pencil_icon.svg", class: "w-4 h-6 inline-block hover:opacity-50 transition" %>
+<div class="bg-[#F4F4F4] min-h-screen w-full">
+  <div class="mx-auto px-5 md:px-0 max-w-[480px] md:max-w-7xl">
+      <div class="max-w-xl mx-auto pt-10">
+        <div class="bg-white p-6 rounded-md shadow max-w-xl mx-auto">
+          <div class="text-center font-medium">
+            <div class="flex justify-center items-center space-x-2 space-y-1 text-center font-medium">
+              <p><%= @user.name %> さん</p>
+              <%= link_to edit_user_registration_path do %>
+                <%= image_tag "pencil_icon.svg", class: "w-4 h-6 inline-block hover:opacity-50 transition" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="flex justify-center mt-10 space-x-4">
+            <%= link_to t('.discover_buddhism'), new_post_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
+          </div>
+        </div>
+
+        <div class="font-semibold text-xl text-left text-[#2F3A4A] pt-20">
+          <%= t('.post_list') %>
+        </div>
+        <div class="space-y-3 pt-4">
+          <% @posts.each do |post| %>
+            <%= link_to post_path(post), class: "block" do %>
+              <div class="bg-white shadow-sm rounded-lg p-3 border border-gray-100">
+
+                <div class="flex items-center gap-2 text-sm font-semibold text-[#2F3A4A]">
+                  <span><%= post.theme.title %></span>
+                  <% if post.image.attached? %>
+                    <%= image_tag "camera_icon.svg", class: "w-4 h-4 inline-block " %>
+                  <% end %>
+                </div>
+
+                <div class="mt-2 text-sm text-[#1C1C1C] leading-snug line-clamp-2">
+                  <%= post.content.truncate(40) %>
+                </div>
+
+                <div class="mt-2 text-[10px] text-gray-500 text-right">
+                  <%= l(post.created_at, format: :long) %>
+                </div>
+                
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
-
-      <div class="flex justify-center mt-10 space-x-4">
-        <%= link_to t('.discover_buddhism'), new_post_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
-      </div>
-    </div>
-
-    <div class="font-semibold text-xl text-left text-[#2F3A4A] pt-20">
-      <%= t('.post_list') %>
-    </div>
-    <div class="space-y-3 pt-4">
-      <% @posts.each do |post| %>
-        <%= link_to post_path(post), class: "block" do %>
-          <div class="bg-white shadow-sm rounded-lg p-3 border border-gray-100">
-
-            <div class="flex items-center gap-2 text-sm font-semibold text-[#2F3A4A]">
-              <span><%= post.theme.title %></span>
-              <% if post.image.attached? %>
-                <%= image_tag "camera_icon.svg", class: "w-4 h-4 inline-block " %>
-              <% end %>
-            </div>
-
-            <div class="mt-2 text-sm text-[#1C1C1C] leading-snug line-clamp-2">
-              <%= post.content.truncate(40) %>
-            </div>
-
-            <div class="mt-2 text-[10px] text-gray-500 text-right">
-              <%= l(post.created_at, format: :long) %>
-            </div>
-
-          </div>
-        <% end %>
-      <% end %>
-    </div>
   </div>
 </div>
