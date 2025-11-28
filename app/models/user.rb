@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :posts
+         has_many :reactions, dependent: :destroy
 
          validates :name, presence: true, uniqueness: true, length: { maximum: 50 }
          validates :password, presence: true, on: :create
