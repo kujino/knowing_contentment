@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 
   get "mypage" => "mypages#show"
 
-  resources :posts, only: [ :new, :create, :show, :index, :edit, :update, :destroy ]
+  resources :posts, only: [ :new, :create, :show, :index, :edit, :update, :destroy ] do
+    collection do
+      get :reactions
+    end
+  end
+  resources :reactions, only: [ :create, :destroy ]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_11_17_020505) do
+ActiveRecord::Schema[7.2].define(version: 2025_11_28_005221) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +53,16 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_17_020505) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "reactions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_reactions_on_post_id"
+    t.index ["user_id", "post_id"], name: "index_reactions_on_user_id_and_post_id", unique: true
+    t.index ["user_id"], name: "index_reactions_on_user_id"
+  end
+
   create_table "themes", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
@@ -78,4 +88,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_17_020505) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "posts", "themes"
   add_foreign_key "posts", "users"
+  add_foreign_key "reactions", "posts"
+  add_foreign_key "reactions", "users"
 end

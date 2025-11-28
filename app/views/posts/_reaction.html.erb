@@ -1,0 +1,11 @@
+<%= link_to reactions_path(post_id: post.id),
+            id: "reaction-button-for-post-#{post.id}",
+            data: { turbo_method: :post },
+            class: "flex items-center space-x-1" do %>
+
+  <%= image_tag "unreaction.svg", class: "w-6 h-6" %>
+  <span class="text-xm text-gray-400 font-medium">
+  <% if post.reactions.size >= 1 %>
+    <%= post.reactions.size %></span>
+  <% end %>
+<% end %>
