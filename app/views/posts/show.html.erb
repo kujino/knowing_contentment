@@ -3,10 +3,12 @@
   <div class="max-w-xl mx-auto pt-10">
 
     <div class="relative p-7 bg-gradient-to-b from-[#FFF9EC] to-white border border-[#F6E2B3] rounded-2xl shadow-md">
-
+      
+    <% if user_signed_in? %>
       <div class="absolute bottom-4 left-4">
         <%= render 'posts/reaction_buttons', post: @post %>
       </div>
+    <% end %>
 
 
       <% if  @post.user == current_user %>

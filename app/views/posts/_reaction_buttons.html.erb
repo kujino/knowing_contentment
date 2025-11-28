@@ -1,9 +1,9 @@
-<%= debug(post.id) %>
-<%= debug(current_user.reaction?(post)) %>
-<div id="reaction_button_<%= post.id %>">
-  <% if current_user.reaction?(post) %>
-    <%= render 'posts/unreaction', post: post %>
-  <% else %>
-    <%= render 'posts/reaction', post: post %>
-  <% end %>
-</div>
+<% if user_signed_in? %>
+  <div id="reaction_button_<%= post.id %>">
+    <% if current_user.reaction?(post) %>
+      <%= render 'posts/unreaction', post: post %>
+    <% else %>
+      <%= render 'posts/reaction', post: post %>
+    <% end %>
+  </div>
+<% end %>
