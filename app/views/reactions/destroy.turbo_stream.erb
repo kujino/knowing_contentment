@@ -1,3 +1,7 @@
-<%= turbo_stream.replace "unreaction-button-for-post-#{@post.id}" do %>
-  <%= render 'posts/reaction', post: @post %>
-<% end %>
+<turbo-stream target="reaction_button_<%= @post.id %>" action="replace">
+  <template>
+    <%= render partial: 'posts/reaction_buttons',
+               formats: [:html],
+               locals: { post: @post } %>
+  </template>
+</turbo-stream>

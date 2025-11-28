@@ -1,3 +1,3 @@
 <%= link_to reactions_path(post_id: post.id), id: "reaction-button-for-post-#{post.id}", data: { turbo_method: :post } do %>
-  <%= image_tag "reaction.svg", class: "w-6 h-6" %>
+  <%= image_tag "unreaction.svg", class: "w-6 h-6" %>
 <% end %>
