@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "reaction-button-for-post-#{@post.id}" do %>
+  <%= render 'posts/unreaction', post: @post %>
+<% end %>

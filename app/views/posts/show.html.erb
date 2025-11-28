@@ -4,6 +4,10 @@
 
     <div class="relative p-7 bg-gradient-to-b from-[#FFF9EC] to-white border border-[#F6E2B3] rounded-2xl shadow-md">
 
+      <div class="absolute bottom-4 left-4">
+        <%= render 'posts/reaction_buttons', post: @post %>
+      </div>
+
       <% if  @post.user == current_user %>
         <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
           <%= link_to edit_post_path(@post), class: "opacity-40 hover:opacity-100 transition" do %>
