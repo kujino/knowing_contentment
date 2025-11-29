@@ -1,5 +1,5 @@
 class ReactionsController < ApplicationController
-  before_action :set_post
+  before_action :set_post, only: [:create, :destroy]
 
   def create
     current_user.reaction(@post)
@@ -17,6 +17,10 @@ class ReactionsController < ApplicationController
       format.turbo_stream
       format.html { redirect_back fallback_location: @post }
     end
+  end
+
+  def index
+    @posts = current_user.reaction_posts
   end
 
   private

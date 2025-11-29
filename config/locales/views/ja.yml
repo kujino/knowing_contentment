@@ -34,6 +34,9 @@ ja:
       title: "投稿詳細"
       delete_it?: "削除しますか？"
       to_back: "戻る"
+  reactions:
+    index:
+      title: "なるほど！リスト"
   shared:
     header:
       buddhalog: "BuddhaLog"
@@ -42,6 +45,7 @@ ja:
       logout: "ログアウト"
       sign_up: "新規登録"
       login: "ログイン"
+      reaction_posts: "なるほど！リスト"
     theme:
       post_theme: "投稿したお題"
   static_pages:
@@ -49,7 +53,7 @@ ja:
       title: "トップページ"
       discover_buddhism: "仏教みつけ"
       timeline: "みんなの仏教"
-      simple_daily_buddhist_practice: "毎日にひとつ、仏教の気づきを"
+      simple_daily_buddhist_practice: "それも仏教、これも仏教"
       sign_up: "ユーザー登録"
 
   devise:
