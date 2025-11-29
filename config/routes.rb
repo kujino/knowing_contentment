@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get :reactions
     end
   end
-  resources :reactions, only: [ :create, :destroy ]
+  resources :reactions, only: [ :create, :destroy, :index ]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
