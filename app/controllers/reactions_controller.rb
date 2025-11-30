@@ -1,5 +1,5 @@
 class ReactionsController < ApplicationController
-  before_action :set_post, only: [:create, :destroy]
+  before_action :set_post, only: [ :create, :destroy ]
 
   def create
     current_user.reaction(@post)

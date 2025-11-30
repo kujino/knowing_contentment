@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :posts, only: [ :new, :create, :show, :index, :edit, :update, :destroy ] do
     collection do
       get :reactions
+      get :mine
     end
   end
   resources :reactions, only: [ :create, :destroy, :index ]

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :post_authorize, only: [:edit, :update, :destroy]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+  before_action :post_authorize, only: [ :edit, :update, :destroy ]
+  before_action :set_post, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @posts = Post.includes(:user, :theme, image_attachment: :blob).order(created_at: :desc)
@@ -47,6 +47,10 @@ class PostsController < ApplicationController
     @post
     @post.destroy!
     redirect_to mypage_path, notice: t("flash_messages.notice.delete")
+  end
+
+  def mine
+     @posts = current_user.posts.includes(:theme, image_attachment: :blob).order(created_at: :desc)
   end
 
   private
