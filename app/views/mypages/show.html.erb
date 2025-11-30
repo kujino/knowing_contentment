@@ -24,7 +24,13 @@
           <% @posts.each do |post| %>
             <%= render 'shared/post_card', post: post %>
           <% end %>
+          <div class="mt-7">
+          <%= link_to mine_posts_path,
+              class: "block w-full text-center bg-white border border-gray-400 text-[#2F3A4A] font-normal py-2 rounded-md hover:bg-gray-50 transition" do %>
+              <span>もっと見る</span>
+          <% end %>
         </div>
+
       </div>
   </div>
 </div>

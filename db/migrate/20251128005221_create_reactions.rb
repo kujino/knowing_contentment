@@ -5,6 +5,6 @@ class CreateReactions < ActiveRecord::Migration[7.2]
       t.references :post, foreign_key: true
       t.timestamps
     end
-    add_index :reactions, [:user_id, :post_id], unique: true
+    add_index :reactions, [ :user_id, :post_id ], unique: true
   end
 end
