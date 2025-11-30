@@ -20,7 +20,7 @@ class ReactionsController < ApplicationController
   end
 
   def index
-    @posts = current_user.reaction_posts
+    @posts = current_user.reaction_posts.order(created_at: :desc)
   end
 
   private
