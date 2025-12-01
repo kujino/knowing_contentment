@@ -32,7 +32,7 @@
       <% date_range.each_slice(7) do |week| %>
         <tr class="border-b border-gray-200">
           <% week.each_with_index do |day, idx| %>
-            <td class="align-top h-14 md:h-20 px-1 <%= 'border-r border-gray-200' unless idx == 6 %>">
+            <td class="align-top h-12 md:h-20 px-1 <%= 'border-r border-gray-200' unless idx == 6 %>">
               <% instance_exec(day, calendar.sorted_events_for(day), &passed_block) %>
             </td>
           <% end %>

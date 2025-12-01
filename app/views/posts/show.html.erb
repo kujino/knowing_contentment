@@ -55,9 +55,15 @@
         <%= render 'shared/theme', post: @post %>
       </div>
 
-      <div class="flex justify-center mt-10 space-x-4">
-        <%= link_to t('.to_mypage'), mypage_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="flex justify-center mt-10 space-x-4">
+          <%= link_to t('.to_mypage'), mypage_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
+        </div>
+      <% else %>
+        <div class="flex justify-center mt-10 space-x-4">
+          <%= link_to t('.to_index'), posts_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
+        </div>
+      <% end %>
 
     </div>
   </div>
