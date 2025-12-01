@@ -1,8 +1,8 @@
 <div class="simple-calendar bg-white">
-  <!-- ヘッダー（前月・年月・次月） -->
+
   <div class="flex items-center justify-between bg-[#7A8C99] px-4 py-3 border-b border-gray-300">
     <%= link_to calendar.url_for_previous_view,
-          class: "text-sm text-white hover:text-gray-400" do %>
+          class: "text-sm text-white hover:text-gray-200" do %>
       ◀
     <% end %>
 
@@ -11,12 +11,12 @@
     </time>
 
     <%= link_to calendar.url_for_next_view,
-          class: "text-sm text-white hover:text-gray-400" do %>
+          class: "text-sm text-white hover:text-gray-200" do %>
       ▶
     <% end %>
   </div>
 
-  <!-- カレンダー本体 -->
+
   <table class="w-full table-fixed border-collapse">
     <thead>
       <tr class="border-b border-gray-300">

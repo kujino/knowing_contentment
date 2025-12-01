@@ -35,8 +35,8 @@ ja:
     show:
       title: "投稿詳細"
       delete_it?: "削除しますか？"
-      to_mypage: "マイページへ"
-      to_index: みんなの仏教へ
+      to_mypage: "マイページ"
+      to_index: みんなの仏教
   reactions:
     index:
       title: "なるほど！リスト"
