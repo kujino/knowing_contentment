@@ -6,3 +6,16 @@
   --font-serif: "Shippori Mincho", serif;
   --font-kaisei: "Kaisei Tokumin", serif;
 }
+
+.simple-calendar table {
+  @apply w-full border-collapse text-center;
+}
+
+.simple-calendar th {
+  @apply py-2 text-sm text-gray-600 font-medium border-b border-gray-300;
+}
+
+.simple-calendar td {
+  @apply align-top;
+}
+
