@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
-  before_action :post_authorize, only: [ :edit, :update, :destroy ]
-  before_action :set_post, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_post, only: [ :edit, :update, :destroy ]
 
   def index
     @posts = Post.includes(:user, :theme, image_attachment: :blob).order(created_at: :desc)
@@ -27,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post
+    @post = Post.find(params[:id])
   end
 
   def edit
@@ -60,13 +59,7 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 
-  # 投稿ユーザー以外アクセス不可
-  def post_authorize
-    if @post.user != current_user
-      redirect_to root_path, alert: t("flash_messages.notice.access_denied")
-    end
-  end
 end
