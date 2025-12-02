@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [ :edit, :update, :destroy ]
 
   def index
-    @posts = Post.includes(:user, :theme, image_attachment: :blob).order(created_at: :desc)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).includes(:user, :theme, image_attachment: :blob).order(created_at: :desc)
   end
 
   def new
