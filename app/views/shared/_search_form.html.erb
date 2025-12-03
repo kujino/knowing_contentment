@@ -2,14 +2,14 @@
   <div class="flex items-center space-x-2 w-full">
     <%= f.select :theme_title_eq,
           [["無常","無常"],["無我","無我"],["縁起","縁起"],["苦","苦"],["妄執","妄執"],["中道","中道"],["空","空"],["慈悲","慈悲"],["五蘊","五蘊"]],
-          { include_blank: "選択" },
+          { include_blank: t('.option') },
           class: "bg-white border border-gray-300 rounded px-2 py-1.5 text-sm" %>
 
     <%= f.search_field :content_cont,
-          placeholder: "投稿内容検索",
+          placeholder: t('.post_content'),
           class: "flex-1 bg-white border border-gray-300 rounded px-2 py-1.5 text-sm" %>
 
-    <%= f.submit "検索",
+    <%= f.submit t('.search'),
           class: "shrink-0 bg-[#E3A83A] text-white text-sm font-medium px-3 py-1.5 rounded hover:bg-[#d9982e] transition" %>
 
   </div>

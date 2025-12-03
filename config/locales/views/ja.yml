@@ -13,6 +13,7 @@ ja:
         title: "マイページ"
         discover_buddhism: "仏教を見つける"
         post_list: "見つけた仏教"
+        to_index: "もっとみる"
   posts:
     edit:
       title: "投稿編集"
@@ -23,7 +24,7 @@ ja:
     index:
       title: "タイムライン"
     mine:
-      title: 見つけた仏教一覧
+      title: "見つけた仏教一覧"
     new:
       title: "新規投稿"
       today_theme: "今日の教え"
@@ -52,6 +53,10 @@ ja:
       mine_posts: "投稿履歴"
     theme:
       post_theme: "投稿したお題"
+    search_form:
+      option: "選択"
+      post_content: "投稿内容"
+      search: "検索"
   static_pages:
     top:
       title: "トップページ"
