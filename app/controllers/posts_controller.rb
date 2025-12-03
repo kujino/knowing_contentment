@@ -50,7 +50,8 @@ class PostsController < ApplicationController
   end
 
   def mine
-     @posts = current_user.posts.includes(:theme, image_attachment: :blob).order(created_at: :desc)
+    @q = current_user.posts.ransack(params[:q])
+    @posts = @q.result(distinct: true).includes(:theme, image_attachment: :blob).order(created_at: :desc)
   end
 
   private

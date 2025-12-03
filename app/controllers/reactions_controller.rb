@@ -20,7 +20,8 @@ class ReactionsController < ApplicationController
   end
 
   def index
-    @posts = current_user.reaction_posts.order(created_at: :desc)
+    @q = current_user.reaction_posts.ransack(params[:q])
+    @posts =  @q.result(distinct: true).order(created_at: :desc)
   end
 
   private
