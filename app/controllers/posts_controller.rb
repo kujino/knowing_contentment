@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [ :edit, :update, :destroy ]
 
   def index
-    @posts = Post.includes(:user, :theme, image_attachment: :blob).order(created_at: :desc)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).includes(:user, :theme, image_attachment: :blob).order(created_at: :desc)
   end
 
   def new
@@ -49,7 +50,8 @@ class PostsController < ApplicationController
   end
 
   def mine
-     @posts = current_user.posts.includes(:theme, image_attachment: :blob).order(created_at: :desc)
+    @q = current_user.posts.ransack(params[:q])
+    @posts = @q.result(distinct: true).includes(:theme, image_attachment: :blob).order(created_at: :desc)
   end
 
   private
