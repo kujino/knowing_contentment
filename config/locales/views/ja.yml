@@ -51,6 +51,7 @@ ja:
       login: "ログイン"
       reaction_posts: "お気に入り"
       mine_posts: "投稿履歴"
+      books: "おすすめ書籍"
     theme:
       post_theme: "投稿したお題"
     search_form:
@@ -64,6 +65,10 @@ ja:
       timeline: "みんなの仏教"
       simple_daily_buddhist_practice: "それも仏教、これも仏教"
       sign_up: "ユーザー登録"
+  books:
+    index:
+      title: "おすすめ書籍"
+      to_rakuten_books?: "楽天ブックスへ移動します"
 
   devise:
     registrations:
