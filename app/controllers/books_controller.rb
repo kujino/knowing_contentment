@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-  TITLE_KEYWORDS = ["東洋哲学", "仏教"]
+  TITLE_KEYWORDS = ["東洋哲学", "仏教 入門", "仏教 悟り"]
 
   AUTHOR_KEYWORDS = ["藤田 一照", "魚川 祐司"]
   
