@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
   resources :reactions, only: [ :create, :destroy, :index ]
-  resources :books, only: [ :index ] 
+  resources :books, only: [ :index ]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

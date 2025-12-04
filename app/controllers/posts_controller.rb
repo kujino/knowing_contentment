@@ -63,5 +63,4 @@ class PostsController < ApplicationController
   def set_post
     @post = current_user.posts.find(params[:id])
   end
-
 end
