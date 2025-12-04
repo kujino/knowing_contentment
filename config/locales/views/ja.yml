@@ -13,6 +13,7 @@ ja:
         title: "マイページ"
         discover_buddhism: "仏教を見つける"
         post_list: "見つけた仏教"
+        to_index: "もっとみる"
   posts:
     edit:
       title: "投稿編集"
@@ -23,7 +24,7 @@ ja:
     index:
       title: "タイムライン"
     mine:
-      title: 見つけた仏教一覧
+      title: "見つけた仏教一覧"
     new:
       title: "新規投稿"
       today_theme: "今日の教え"
@@ -39,7 +40,7 @@ ja:
       to_index: みんなの仏教
   reactions:
     index:
-      title: "なるほど！リスト"
+      title: "お気に入り"
   shared:
     header:
       buddhalog: "BuddhaLog"
@@ -50,8 +51,13 @@ ja:
       login: "ログイン"
       reaction_posts: "お気に入り"
       mine_posts: "投稿履歴"
+      books: "書籍で学ぶ"
     theme:
       post_theme: "投稿したお題"
+    search_form:
+      option: "選択"
+      post_content: "投稿内容"
+      search: "検索"
   static_pages:
     top:
       title: "トップページ"
@@ -59,6 +65,10 @@ ja:
       timeline: "みんなの仏教"
       simple_daily_buddhist_practice: "それも仏教、これも仏教"
       sign_up: "ユーザー登録"
+  books:
+    index:
+      title: "書籍で学ぶ"
+      to_rakuten_books?: "楽天ブックスへ移動します"
 
   devise:
     registrations:

@@ -13,11 +13,10 @@ class Post < ApplicationRecord
   validates :content, presence: true, length: { maximum: 300 }
 
   def self.ransackable_attributes(auth_object = nil)
-    ["content", "created_at", "id", "is_anonymous", "theme_id", "updated_at", "user_id"]
+    [ "content", "created_at", "id", "is_anonymous", "theme_id", "updated_at", "user_id" ]
   end
 
   def self.ransackable_associations(auth_object = nil)
-    ["image_attachment", "image_blob", "reactions", "theme", "user"]
+    [ "image_attachment", "image_blob", "reactions", "theme", "user" ]
   end
-
 end

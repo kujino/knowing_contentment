@@ -126,6 +126,10 @@ GEM
     devise-i18n (1.15.0)
       devise (>= 4.9.0)
       rails-i18n
+    dotenv (3.2.0)
+    dotenv-rails (3.2.0)
+      dotenv (= 3.2.0)
+      railties (>= 6.1)
     drb (2.2.3)
     enum_help (0.0.20)
       activesupport (>= 3.0.0)
@@ -283,6 +287,10 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.3.1)
+    rakuten_web_service (1.15.0)
+      base64 (~> 0.2)
+      bigdecimal (~> 3.1)
+      json (~> 2.3)
     ransack (4.4.1)
       activerecord (>= 7.2)
       activesupport (>= 7.2)
@@ -412,6 +420,7 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
+  dotenv-rails
   enum_help
   image_processing (~> 1.2)
   jbuilder
@@ -420,6 +429,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.2.1)
   rails-i18n
+  rakuten_web_service
   ransack
   rubocop-rails-omakase
   selenium-webdriver
