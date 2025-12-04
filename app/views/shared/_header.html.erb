@@ -19,6 +19,11 @@
 
 
       <% if user_signed_in? %>
+
+      <%= link_to t('.books'), books_path,
+      class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition whitespace-nowrap inline-flex items-center py-1.5
+              #{ 'border-b-2 border-[#E3A83A] text-[#E3A83A]' if current_page?(books_path) }" %>
+
         <div data-controller="ui--dropdown" class="relative">
           <button
             type="button"
@@ -51,10 +56,6 @@
               <%= link_to t('.mine_posts'), mine_posts_path,
               class: "block px-4 py-2 text-sm hover:bg-gray-100
                       #{ 'text-[#E3A83A] font-semibold' if current_page?(mine_posts_path) }" %>
-
-              <%= link_to t('.books'), books_path,
-              class: "block px-4 py-2 text-sm hover:bg-gray-100
-                      #{ 'text-[#E3A83A] font-semibold' if current_page?(books_path) }" %>
 
               <%= link_to t('.logout'), destroy_user_session_path,
                     data: { turbo_method: "delete" },

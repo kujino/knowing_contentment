@@ -2,7 +2,7 @@ class BooksController < ApplicationController
 
   TITLE_KEYWORDS = ["東洋哲学", "仏教"]
 
-  AUTHOR_KEYWORDS = ["藤田一照", "魚川祐司"]
+  AUTHOR_KEYWORDS = ["藤田 一照", "魚川 祐司"]
   
   def index
     search_type = [:title, :author].sample
