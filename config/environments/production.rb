@@ -78,7 +78,7 @@ Rails.application.configure do
   # caching is enabled.
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'https://buddhalog.com/' } # 本番環境のURLを入れてください。
+  config.action_mailer.default_url_options = { host: 'buddhalog.com', protocol: 'https' } # 本番環境のURLを入れてください。
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
