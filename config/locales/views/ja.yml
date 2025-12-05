@@ -91,6 +91,17 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         submit: "ログイン"
+        forgot_your_password?: "パスワードをお忘れの方はこちら"
+    passwords:
+      new:
+        title: "パスワード再設定申請"
+        email: "メールアドレス"
+        submit: "送信"
+      edit:
+        title: "パスワード再設定"
+        new_password: "新しいパスワード（6文字以上）"
+        password_confirmation: "新しいパスワード（確認用）"
+        submit: "更新"
 
         
 
