@@ -14,10 +14,7 @@
           <div class="space-y-4">
             <div>
               <%= f.label t('.new_password'), class: "text-[#2F3A4A] font-medium" %>
-                <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-                <% end %>
-                <%= f.password_field :password, class: "w-full mt-1 px-3 py-1 border border-gray-300 rounded-md", autocomplete: "new-password",  placeholder: "password" %>
+              <%= f.password_field :password, class: "w-full mt-1 px-3 py-1 border border-gray-300 rounded-md", autocomplete: "new-password",  placeholder: "password" %>
             </div>
 
             <div>
