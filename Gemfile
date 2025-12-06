@@ -52,6 +52,8 @@ gem "enum_help"
 gem "rakuten_web_service"
 gem "dotenv-rails"
 
+gem "rails_admin"
+gem "cancancan"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -75,3 +77,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+gem "sassc-rails"
