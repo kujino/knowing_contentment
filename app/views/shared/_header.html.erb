@@ -7,21 +7,21 @@
     <!-- 左側: ロゴ -->
     <div>
       <%= link_to t('.buddhalog'), root_path,
-            class: "text-xl md:text-2xl font-bold text-[#2F3A4A] whitespace-nowrap" %>
+            class: "text-sm md:text-2xl font-bold text-[#2F3A4A] whitespace-nowrap" %>
     </div>
 
     <!-- 右側ナビ -->
     <nav class="flex items-center space-x-3 md:space-x-6 text-sm md:text-base">
 
       <%= link_to t('.timeline'), posts_path,
-      class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition whitespace-nowrap inline-flex items-center py-1.5
+      class: "text-[#2F3A4A] text-xs md:text-base font-medium hover:text-[#E3A83A] transition whitespace-nowrap inline-flex items-center py-1.5
               #{ 'border-b-2 border-[#E3A83A] text-[#E3A83A]' if current_page?(posts_path) }" %>
 
 
       <% if user_signed_in? %>
 
       <%= link_to t('.books'), books_path,
-      class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition whitespace-nowrap inline-flex items-center py-1.5
+      class: "text-[#2F3A4A] text-xs md:text-base font-medium hover:text-[#E3A83A] transition whitespace-nowrap inline-flex items-center py-1.5
               #{ 'border-b-2 border-[#E3A83A] text-[#E3A83A]' if current_page?(books_path) }" %>
 
         <div data-controller="ui--dropdown" class="relative">
@@ -66,11 +66,11 @@
 
       <% else %>
         <%= link_to t('.sign_up'), new_user_registration_path,
-              class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition whitespace-nowrap inline-flex items-center py-1.5
+              class: "text-[#2F3A4A] text-xs md:text-base font-medium hover:text-[#E3A83A] transition whitespace-nowrap inline-flex items-center py-1.5
               #{ 'border-b-2 border-[#E3A83A] text-[#E3A83A]' if current_page?(new_user_registration_path) }" %>
 
         <%= link_to t('.login'), new_user_session_path,
-              class: "text-[#2F3A4A] font-medium hover:text-[#E3A83A] transition whitespace-nowrap inline-flex items-center py-1.5
+              class: "text-[#2F3A4A] text-xs md:text-base font-medium hover:text-[#E3A83A] transition whitespace-nowrap inline-flex items-center py-1.5
               #{ 'border-b-2 border-[#E3A83A] text-[#E3A83A]' if current_page?(new_user_session_path) }" %>
 
       <% end %>
