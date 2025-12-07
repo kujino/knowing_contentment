@@ -6,6 +6,9 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: パスワード確認
+      theme:
+        title: "タイトル"
+        description: "説明文"
       post:
         content: "内容"
 

@@ -3,5 +3,10 @@
     <div class="text-center text-white text-sm">
       © 2025 BuddhaLog All rights reserved.
     </div>
+    <div class="text-white text-center text-sm pt-5">
+      <% if current_user.try(:admin?) %>
+        <%= link_to t('.admin_page'), rails_admin_path %>
+      <% end %>
+    </div>
   </footer>
 </div>
