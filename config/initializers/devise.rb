@@ -25,7 +25,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   Devise.setup do |config|
-    config.mailer_sender = ENV['MAILER_SENDER']
+    config.mailer_sender = ENV["MAILER_SENDER"]
   end
 
   # Configure the class responsible to send e-mails.
