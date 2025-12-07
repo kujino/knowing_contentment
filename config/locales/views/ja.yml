@@ -52,6 +52,8 @@ ja:
       reaction_posts: "お気に入り"
       mine_posts: "投稿履歴"
       books: "書籍で学ぶ"
+    footer:
+      admin_page: "管理者ページ"
     theme:
       post_theme: "投稿したお題"
     search_form:
