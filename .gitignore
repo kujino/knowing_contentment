@@ -43,3 +43,5 @@
 .DS_Store
 /vendor/bundle
 # ここまで追記
+
+*.back
