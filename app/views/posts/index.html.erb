@@ -7,9 +7,10 @@
         <%= search_form_for @q, url: posts_path do |f| %>
           <%= render 'shared/search_form', f: f %>
         <% end %>
-
+        
         <% @posts.each do |post| %>
           <%= link_to post_path(post), class: "block" do %>
+            <div class="pb-5">
             <div class="bg-white shadow-sm rounded-lg p-4 border border-gray-100">
 
               <div class="text-left text-sl font-semibold text-[#2F3A4A]">
@@ -32,6 +33,7 @@
                 <% end %>
                 <span><%= l(post.created_at, format: :long) %></span>
               </div>
+            </div>
             </div>
           <% end %>
         <% end %>
