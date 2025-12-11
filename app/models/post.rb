@@ -19,4 +19,9 @@ class Post < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     [ "image_attachment", "image_blob", "reactions", "theme", "user" ]
   end
+
+  def to_param
+    uuid
+  end
+  
 end
