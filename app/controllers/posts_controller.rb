@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by(uuid: params[:uuid])
   end
 
   def edit
@@ -61,6 +61,7 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = current_user.posts.find(params[:id])
+    @post = current_user.posts.find_by(uuid: params[:uuid])
+
   end
 end

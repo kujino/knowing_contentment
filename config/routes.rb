@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get "mypage" => "mypages#show"
 
-  resources :posts, only: [ :new, :create, :show, :index, :edit, :update, :destroy ] do
+  resources :posts, param: :uuid, only: [ :new, :create, :show, :index, :edit, :update, :destroy ] do
     collection do
       get :reactions
       get :mine
