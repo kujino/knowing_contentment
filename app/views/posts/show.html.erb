@@ -2,7 +2,7 @@
 
 <div class="bg-[#F4F4F4] min-h-screen w-full">
   <div class="mx-auto px-5 md:px-0 max-w-[480px] md:max-w-7xl">
-    <div class="max-w-xl mx-auto pt-10">
+    <div class="max-w-xl mx-auto pt-10 pb-10">
 
       <div class="relative p-7 bg-gradient-to-b from-[#FFF9EC] to-white border border-[#F6E2B3] rounded-2xl shadow-md">
 
@@ -58,26 +58,26 @@
       <% if user_signed_in? %>
         <div class="flex justify-center mt-10 space-x-6">
 
-  <%= link_to t('.to_mypage'), mypage_path,
-      class: "text-[#2F3A4A] text-sl font-medium 
-              pb-[2px] border-b border-transparent 
-              hover:border-[#E9B25A] transition" %>
+          <%= link_to t('.to_mypage'), mypage_path,
+            class: "text-[#2F3A4A] text-sl font-medium 
+                    pb-[2px] border-b border-transparent 
+                    hover:border-[#E9B25A] transition" %>
 
-  <%= link_to t('.to_index'), posts_path,
-      class: "text-[#2F3A4A] text-sl font-medium 
-              pb-[2px] border-b border-transparent 
-              hover:border-[#E9B25A] transition" %>
+          <%= link_to t('.to_index'), posts_path,
+            class: "text-[#2F3A4A] text-sl font-medium 
+                    pb-[2px] border-b border-transparent 
+                    hover:border-[#E9B25A] transition" %>
 
-</div>
-
-      <% else %>
-        <div class="flex justify-center mt-10 space-x-4">
-          <%= link_to t('.to_index'), posts_path, 
-              class: "text-[#2F3A4A] text-sl font-medium 
-                      pb-[2px] border-b border-transparent 
-                      hover:border-[#E9B25A] transition" %>
         </div>
-      <% end %>
+
+        <% else %>
+          <div class="flex justify-center mt-10 space-x-4">
+            <%= link_to t('.to_index'), posts_path, 
+                class: "text-[#2F3A4A] text-sl font-medium 
+                        pb-[2px] border-b border-transparent 
+                        hover:border-[#E9B25A] transition" %>
+          </div>
+        <% end %>
 
     </div>
   </div>
