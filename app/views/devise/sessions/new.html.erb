@@ -20,12 +20,40 @@
             </div>
 
             <div class="flex justify-center mt-10 space-x-4">
-              <%= f.submit t('.submit'), class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f]" %>
+              <%= f.submit t('.submit'), class: "bg-[#E3A83A] text-white font-medium py-2 w-full rounded-md shadow-sm hover:bg-[#cc972f]" %>
             </div>
-
-            <%= link_to t('.forgot_your_password?'), new_user_password_path, class:"text-xs font-normal block text-center text-gray-400 mt-5 hover:text-gray-600 transition-colors duration-200" %>
           </div>   
         <% end %>
+
+        <p class="text-center text-xs font-medium text-gray-500 mt-3" >
+          または
+        <p/>
+
+        <%= button_to user_google_oauth2_omniauth_authorize_path,
+              method: :post,
+              data: { turbo: false },
+              class: "w-full" do %>
+
+            <div class="mt-3 flex items-center justify-center gap-3
+                        rounded-md border border-gray-300 bg-white
+                        px-4 py-2 text-sm font-medium text-gray-700
+                        hover:bg-gray-50 hover:shadow
+                        transition">
+
+              <!-- Google icon -->
+              <svg class="h-5 w-5" viewBox="0 0 533.5 544.3" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#4285f4" d="M533.5 278.4c0-17.4-1.6-34.1-4.6-50.4H272v95.3h146.9c-6.3 34.1-25 63-53.3 82.3v68h86.1c50.4-46.4 81.8-114.9 81.8-195.2z"/>
+                <path fill="#34a853" d="M272 544.3c72.6 0 133.5-24.1 178-65.5l-86.1-68c-24 16.1-54.8 25.6-91.9 25.6-70.6 0-130.5-47.6-152-111.4h-89.6v69.9c44.4 88 135.6 149.4 241.6 149.4z"/>
+                <path fill="#fbbc04" d="M120 324.9c-10.3-30.9-10.3-64.2 0-95.1V159.9h-89.6c-39.4 78.8-39.4 171.6 0 250.4l89.6-69.9z"/>
+                <path fill="#ea4335" d="M272 107.7c39.5-.6 77.6 14 106.6 40.9l79.5-79.5C411.4 24.1 344.6-1.3 272 0 166 0 74.8 61.4 30.4 149.4l89.6 69.9C141.5 155.3 201.4 107.7 272 107.7z"/>
+              </svg>
+
+              <span><%= t('.sign_in_with_google') %></span>
+            </div>
+          <% end %>
+
+          <%= link_to t('.forgot_your_password?'), new_user_password_path, class:"text-xs font-normal block text-center text-gray-500 mt-10 hover:text-gray-800 transition-colors duration-200" %>
+
     </div>
   </div>
 </div>

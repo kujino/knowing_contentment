@@ -3,12 +3,20 @@
   <div class="mx-auto px-5 md:px-0 max-w-[480px] md:max-w-7xl">
       <div class="max-w-xl mx-auto pt-10">
         <div class="bg-white p-5 md:p-10 rounded-md shadow max-w-xl mx-auto">
-            <div class="flex justify-center items-center space-x-2 space-y-1 text-center font-medium">
-              <p><%= @user.name %> さん</p>
-              <%= link_to edit_user_registration_path do %>
-                <%= image_tag "pencil_icon.svg", class: "w-4 h-6 inline-block hover:opacity-50 transition" %>
-              <% end %>
-            </div>
+          <div class="flex justify-center items-center space-x-3 text-center font-medium">
+            <p><%= @user.name %> さん</p>
+
+            <%= link_to edit_user_registration_path,
+                class: "inline-flex items-center
+                        rounded-md border border-gray-300
+                        bg-white px-3 py-1
+                        text-xs text-gray-700
+                        hover:bg-gray-100
+                        hover:border-gray-400
+                        transition" do %>
+              編集
+            <% end %>
+          </div>
 
             <div class="mt-5 mb-5 md:mt-10 md:mb-15 simple-calendar bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
               <%= month_calendar attribute: :created_at, events: @calendar_posts do |date, posts_for_day| %>
@@ -38,7 +46,7 @@
             </div>
 
           <div class="flex justify-center space-x-4">
-            <%= link_to t('.discover_buddhism'), new_post_path, class: "bg-[#E3A83A] text-white font-medium py-2 px-6 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
+            <%= link_to t('.discover_buddhism'), new_post_path, class: "bg-[#E3A83A] text-center text-white font-medium py-2 w-full rounded-md shadow-sm hover:bg-[#cc972f] transition" %>
           </div>
         </div>
 
