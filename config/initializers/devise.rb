@@ -26,7 +26,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = ENV["MAILER_SENDER"]
 
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
+  config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"]
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

@@ -62,6 +62,5 @@ class PostsController < ApplicationController
 
   def set_post
     @post = current_user.posts.find_by(uuid: params[:uuid])
-
   end
 end

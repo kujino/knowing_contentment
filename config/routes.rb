@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     sessions: "users/sessions",
     password: "users/passwords",
-    omniauth_callbacks: 'users/omniauth_callbacks'
+    omniauth_callbacks: "users/omniauth_callbacks"
   }
 
   get "mypage" => "mypages#show"
