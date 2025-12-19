@@ -11,7 +11,7 @@ ja:
   mypages:
       show:
         title: "マイページ"
-        discover_buddhism: "仏教を見つける"
+        discover_buddhism: "今日の仏教をみつける"
         post_list: "見つけた仏教"
         to_index: "もっとみる"
   posts:
@@ -64,9 +64,9 @@ ja:
     top:
       title: "トップページ"
       discover_buddhism: "仏教みつけ"
-      timeline: "みんなの仏教"
+      timeline: "みんなの仏教をみる"
       simple_daily_buddhist_practice: "それも仏教、これも仏教"
-      sign_up: "ユーザー登録"
+      sign_up: "はじめての方はこちら"
   books:
     index:
       title: "書籍で学ぶ"
@@ -87,7 +87,7 @@ ja:
         password_confirmation: "パスワード（確認用）"
         submit: "登録する"
         to_login_page: "アカウントをお持ちの方はこちら"
-        sign_in_with_google: "Googleアカウントでログイン"
+        sign_in_with_google: "Googleアカウントで新規登録"
     sessions:
       new:
         title: "ログイン"

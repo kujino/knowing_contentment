@@ -46,20 +46,20 @@
           >
             <div class="py-1">
               <%= link_to t('.my_page'), mypage_path,
-              class: "block px-4 py-2 text-sm hover:bg-gray-100
+              class: "block px-4 py-2 text-xs md:text-sm hover:bg-gray-100
                       #{ 'text-[#E3A83A] font-semibold' if current_page?(mypage_path) }" %>
 
               <%= link_to t('.reaction_posts'), reactions_path,
-              class: "block px-4 py-2 text-sm hover:bg-gray-100
+              class: "block px-4 py-2 text-xs md:text-sm hover:bg-gray-100
                       #{ 'text-[#E3A83A] font-semibold' if current_page?(reactions_path) }" %>
 
               <%= link_to t('.mine_posts'), mine_posts_path,
-              class: "block px-4 py-2 text-sm hover:bg-gray-100
+              class: "block px-4 py-2 text-xs md:text-sm hover:bg-gray-100
                       #{ 'text-[#E3A83A] font-semibold' if current_page?(mine_posts_path) }" %>
 
               <%= link_to t('.logout'), destroy_user_session_path,
                     data: { turbo_method: "delete" },
-                    class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" %>
+                    class: "block px-4 py-2 text-xs md:text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" %>
             </div>
           </div>
         </div>

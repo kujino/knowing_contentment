@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
 <div class="bg-[#F4F4F4] min-h-screen w-full">
   <div class="mx-auto px-5 md:px-0 max-w-[480px] md:max-w-7xl">
-    <div class="max-w-xl mx-auto pt-10">
+    <div class="max-w-xl mx-auto pt-10 pb-10">
       <div class="p-7 bg-gradient-to-b from-[#FFF9EC] to-white border border-[#F6E2B3] rounded-2xl shadow-md">
         <div class="text-center mb-6">
           <div class="text-sm tracking-widest text-[#A8731E] font-medium mb-1">
@@ -58,7 +58,7 @@
       
             <div class="flex justify-center pt-15">
               <%= f.submit t('.submit'),
-              class: "bg-[#E3A83A] text-white font-medium py-2 px-10 rounded-none shadow-sm hover:bg-[#cc972f] transition" %>
+              class: "bg-[#E3A83A] text-white font-medium py-2 w-full rounded-md shadow-sm hover:bg-[#cc972f] transition" %>
             </div>
           <% end %>
       </div>
