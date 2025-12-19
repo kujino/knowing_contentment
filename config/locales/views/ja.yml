@@ -87,6 +87,7 @@ ja:
         password_confirmation: "パスワード（確認用）"
         submit: "登録する"
         to_login_page: "アカウントをお持ちの方はこちら"
+        sign_in_with_google: "Googleアカウントでログイン"
     sessions:
       new:
         title: "ログイン"
@@ -94,6 +95,7 @@ ja:
         password: "パスワード"
         submit: "ログイン"
         forgot_your_password?: "パスワードをお忘れの方はこちら"
+        sign_in_with_google: "Googleアカウントでログイン"
     passwords:
       new:
         title: "パスワード再設定申請"
