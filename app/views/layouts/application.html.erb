@@ -7,7 +7,7 @@
       <% else %>
         <%= t('site.title') %>
       <% end %>
-</title>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -31,6 +31,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <%= favicon_link_tag('buddhalog_favicon.ico') %>
     <%= display_meta_tags(default_meta_tags) %>
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
 
   <body class="flex flex-col min-h-screen bg-white">

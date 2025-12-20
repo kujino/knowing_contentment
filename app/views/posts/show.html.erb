@@ -51,8 +51,21 @@
         </div>
       </div>
 
-      <div class="pt-10">
-        <%= render 'shared/theme', post: @post %>
+      <div x-data="{ open: false }" class="mt-6">
+        <button
+          @click="open = !open"
+          class="text-sm md:text-base text-gray-600 hover:text-[#E3A83A] transition"
+        >
+          投稿のお題を見る ▼
+        </button>
+
+        <div
+          x-show="open"
+          x-transition
+          class="mt-2"
+        >
+          <%= simple_format(render 'shared/theme', post: @post) %>
+        </div>
       </div>
 
       <% if user_signed_in? %>
