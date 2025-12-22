@@ -54,6 +54,9 @@ ja:
       books: "書籍で学ぶ"
     footer:
       admin_page: "管理者ページ"
+      terms_of_service: "利用規約"
+      privacy_policy: "プライバシーポリシー"
+      contact: "お問い合わせ"
     theme:
       post_theme: "投稿したお題"
     search_form:
@@ -71,6 +74,11 @@ ja:
     index:
       title: "書籍で学ぶ"
       to_rakuten_books?: "楽天ブックスへ移動します"
+  pages:
+    terms_of_service:
+      title: "利用規約"
+    privacy_policy:
+      title: "プライバシーポリシー"
 
   devise:
     registrations:

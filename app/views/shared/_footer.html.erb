@@ -3,6 +3,11 @@
     <div class="text-center text-white text-sm">
       © 2025 BuddhaLog All rights reserved.
     </div>
+    <div class="flex flex justify-center text-white text-xs md:text-sm mt-2 space-x-4">
+      <%= link_to t('.terms_of_service'), terms_of_service_path %>
+      <%= link_to t('.privacy_policy'), privacy_policy_path %>
+      <%= link_to t('.contact'), "https://docs.google.com/forms/d/e/1FAIpQLSc0w8rDkTRRYeLpa8gB9tsUC8iyDcVagCe52yaiKKlBue57bA/viewform?usp=sharing&ouid=103159877724974316240" %>
+    </div>
     <div class="text-white text-center text-xs pt-3">
       <% if current_user.try(:admin?) %>
         <%= link_to t('.admin_page'), rails_admin_path %>
