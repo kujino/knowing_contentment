@@ -55,6 +55,7 @@ ja:
     footer:
       admin_page: "管理者ページ"
       terms_of_service: "利用規約"
+      privacy_policy: "プライバシーポリシー"
     theme:
       post_theme: "投稿したお題"
     search_form:
@@ -75,6 +76,8 @@ ja:
   pages:
     terms_of_service:
       title: "利用規約"
+    privacy_policy:
+      title: "プライバシーポリシー"
 
   devise:
     registrations:
