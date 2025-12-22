@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   }
 
   get "mypage" => "mypages#show"
+  get "terms_of_service" => "pages#terms_of_service"
 
   resources :posts, param: :uuid, only: [ :new, :create, :show, :index, :edit, :update, :destroy ] do
     collection do

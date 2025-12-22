@@ -3,6 +3,9 @@
     <div class="text-center text-white text-sm">
       © 2025 BuddhaLog All rights reserved.
     </div>
+    <div class="text-center text-white text-sm mt-2">
+      <%= link_to t('.terms_of_service'), terms_of_service_path %>
+    </div>
     <div class="text-white text-center text-xs pt-3">
       <% if current_user.try(:admin?) %>
         <%= link_to t('.admin_page'), rails_admin_path %>
