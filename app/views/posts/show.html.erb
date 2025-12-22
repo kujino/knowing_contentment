@@ -38,26 +38,44 @@
 
           <div class="border-t border-gray-300"></div>
 
-          <div class="mt-3 flex items-center justify-between text-gray-500">
-            <% if user_signed_in? %>
-              <%= render 'posts/reaction_buttons', post: @post %>
-            <% end %>
+          <div class="mt-3 grid grid-cols-3 items-center text-gray-500">
+            <div class="justify-self-start">
+              <% if user_signed_in? %>
+                <%= render 'posts/reaction_buttons', post: @post %>
+              <% end %>
+            </div>
 
-            <% if @post.user == current_user %>
-              <div class="flex space-x-4">
-                <%= link_to edit_post_path(@post),
-                  class: "opacity-50 hover:opacity-100 transition" do %>
+            <div class="justify-self-center">
+              <% if @post.user == current_user %>
+                <%= link_to(
+                  "https://twitter.com/intent/tweet?url=#{CGI.escape(post_url(@post))}&text=#{CGI.escape("仏教みつけで「#{@post.theme.title}」を見つけました #仏教みつけ")}",
+                  target: "_blank",
+                  rel: "noopener",
+                  class: "opacity-80 hover:opacity-100 transition"
+                ) do %>
+                  <%= image_tag "x_icon.png", class: "w-6 h-6" %>
+                <% end %>
+              <% end %>
+            </div>
+
+            <div class="justify-self-end">
+              <% if @post.user == current_user %>
+                <div class="flex space-x-4">
+                  <%= link_to edit_post_path(@post),
+                    class: "opacity-50 hover:opacity-100 transition" do %>
                     <%= image_tag "edit_pencil.png", class: "w-5 h-5" %>
-                <% end %>
+                  <% end %>
 
-                <%= link_to post_path(@post),
-                  data: { turbo_method: :delete, turbo_confirm: t('.delete_it?') },
-                  class: "opacity-50 hover:opacity-100 transition" do %>
+                  <%= link_to post_path(@post),
+                    data: { turbo_method: :delete, turbo_confirm: t('.delete_it?') },
+                    class: "opacity-50 hover:opacity-100 transition" do %>
                     <%= image_tag "trash.png", class: "w-5 h-5" %>
-                <% end %>
-              </div>
-            <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
           </div>
+
 
 
         <div x-data="{ open: false }" class="mt-10">
