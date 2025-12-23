@@ -19,7 +19,6 @@ RSpec.describe User, type: :model do
         expect(user).to be_invalid
         expect(user.errors.details[:name])
           .to include(a_hash_including(error: :too_long))
-
       end
 
       it "重複した名前は無効である" do
@@ -61,7 +60,6 @@ RSpec.describe User, type: :model do
         expect(user).to be_invalid
         expect(user.errors.details[:uid]).to include(a_hash_including(error: :taken))
       end
-
     end
   end
 end

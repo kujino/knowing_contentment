@@ -4,11 +4,10 @@ RSpec.describe '投稿機能のCRUD', type: :system do
   include LoginMacros
 
   context '投稿作成' do
-    
     let(:user) { create(:user) }
 
     let!(:theme) do
-      Theme.create!(title: 'テスト', description: 'テスト' )
+      Theme.create!(title: 'テスト', description: 'テスト')
     end
 
     it "今日の仏教をみつけるボタンで投稿フォーム表示" do
@@ -37,11 +36,10 @@ RSpec.describe '投稿機能のCRUD', type: :system do
   end
 
   context '投稿の編集' do
-
     let(:user) { create(:user) }
 
     let!(:theme) do
-      Theme.create!(title: 'テスト', description: 'テスト' )
+      Theme.create!(title: 'テスト', description: 'テスト')
     end
 
     let!(:post) do
@@ -62,11 +60,10 @@ RSpec.describe '投稿機能のCRUD', type: :system do
   end
 
   context '投稿の削除' do
-
     let(:user) { create(:user) }
 
     let!(:theme) do
-      Theme.create!(title: 'テスト', description: 'テスト' )
+      Theme.create!(title: 'テスト', description: 'テスト')
     end
 
     let!(:post) do

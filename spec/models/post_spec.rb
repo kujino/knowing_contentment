@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  
   let(:user) { create(:user) }
 
   let(:theme) do
-      Theme.create!(title: 'テスト', description: 'テスト' )
+      Theme.create!(title: 'テスト', description: 'テスト')
   end
 
   def attach_image(post, filename:, content_type:)

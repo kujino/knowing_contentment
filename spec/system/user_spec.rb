@@ -42,7 +42,6 @@ RSpec.describe 'ユーザー機能', type: :system do
   end
 
   context 'ログイン' do
-
     let(:user) { create(:user) }
 
     it '入力値が正常ならログインできる' do
@@ -76,7 +75,6 @@ RSpec.describe 'ユーザー機能', type: :system do
     end
   end
   context 'ログアウト' do
-    
     let(:user) { create(:user) }
 
     it 'ログアウトボタンでログアウト処理' do
