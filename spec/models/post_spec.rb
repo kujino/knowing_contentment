@@ -1,13 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let(:user) do
-    User.create!(
-      name: 'テストユーザー',
-      email: 'test@example.com',
-      password: 'password'
-    )
-  end
+  
+  let(:user) { create(:user) }
 
   let(:theme) do
       Theme.create!(title: 'テスト', description: 'テスト' )

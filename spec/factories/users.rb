@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :user do
-    name { "test_user" }
-    email {"testuser@example.com"}
+    name  { "テストユーザー_#{SecureRandom.hex(4)}" }
+    email { "test_#{SecureRandom.hex(4)}@example.com" }
     password { "password123" }
     provider { "email" }
     uid { SecureRandom.uuid }

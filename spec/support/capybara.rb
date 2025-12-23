@@ -28,7 +28,7 @@ RSpec.configure do |config|
 
     Capybara.server = :puma
     Capybara.server_host = "0.0.0.0"
-    Capybara.server_port = 3000   # ← Rails のポート
+    Capybara.server_port = nil   # ← Rails のポート
 
     Capybara.app_host = "http://web:3000" # ← service名:port
   end
