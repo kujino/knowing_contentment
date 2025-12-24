@@ -77,6 +77,10 @@ jobs:
       - name: Prepare database
         run: |
           bin/rails db:prepare
+      
+      - name: Precompile assets
+        run: |
+          bin/rails assets:precompile
 
       - name: Run RSpec
         run: |
