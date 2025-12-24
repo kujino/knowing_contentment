@@ -39,6 +39,7 @@ end
 RSpec.configure do |config|
   config.before(:each, type: :system) do
     Capybara.ignore_hidden_elements = false
+    driven_by :rack_test
   end
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [
