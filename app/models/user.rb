@@ -37,4 +37,8 @@ class User < ApplicationRecord
   def self.create_unique_string
     SecureRandom.uuid
   end
+
+  def remember_me
+    true
+  end
 end
